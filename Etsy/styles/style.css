@@ -1,0 +1,31 @@
+img{
+    width: 100% ;
+}
+/*        body{ background: rgb(237,238,239);}*/
+#posts{
+    background: white;
+    box-shadow: 0px 0px 25px #888888;
+}
+.reverse-tab th{
+    background: rgb(237,238,239);
+}
+.reverse-tab th:hover,
+.reverse-tab th:focus{
+    box-shadow: 0px 0px 25px #888888;
+}
+
+.search{
+    margin-bottom: 30px;
+    background: rgba(34,34,34,.7);
+    color: white;
+    height: 40px;
+    border-radius: 50px;
+}
+.search input{
+    color: black;   
+}
+.search div{
+    padding-top: 6px;   
+    margin: 0 auto;
+    text-align: center;
+}

@@ -23,7 +23,6 @@ angular.module('app.controllers', [])
         });
     
     $scope.reverseState = function(){
-        console.log($scope.statesCopy[0]);
         $scope.statesCopy.reverse();    
     };
     $scope.filter= "";

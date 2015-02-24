@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="basicHTTP">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+    <body ng-controller='postCtrl'>
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <p class="text-center">
+                <i class="fa fa-camera-retro fa-3x"></i>
+            </p>
+        </div>
+    </nav>
+
+    <div class="container jumbotron col-lg-8 col-md-8 col-sm-8 col-xs-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-1">
+        <div class="search col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <div >
+                Search Etsy Catalog : 
+                <input ng-model="filter" placeholder="type search here..." type="text">
+            </div>
+        </div>
+        <table id="posts" class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <tr class="reverse-tab">
+                <th>No. </th>
+                <th ng-click="reverseState()">Title</th>
+                <th ng-click="reverseState()">Number of Favorites</th>
+                <th>Quantity</th>
+                <th>Listing Link</th>
+            </tr>
+            <tr ng-repeat="listing in listingsCopy track by $index"> 
+                <td>{{$index}}</td>
+                <td>{{listing.title}}</td>
+                <td>{{listing.num_favorers}}</td>
+                <td>{{listing.quantity}}</td>
+                <td>
+                    <a ng-href="{{listing.url}}">Check it out!</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!--        Loaded -->
+        <script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>           <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<!--        Files -->
+        <script type="text/javascript" src="scripts/controllers.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+    </body>
+</html>

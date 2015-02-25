@@ -27,7 +27,6 @@
             <div >
                 Search by State : 
                 <input ng-model="filter" placeholder="type search here..." type="text">
-<!--                {{filter}}-->
             </div>
         </div>
         <table id="posts" class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
@@ -39,7 +38,7 @@
             <tr ng-repeat="state in statesCopy"> 
                 <td>{{state.name}}</td>
                 <td>{{state.abbreviation}}</td>
-                <td><a ng-href="http://lmgtfy.com/?q={{state.name}}">{{state.name}}</a></td>
+                <td><a ng-href="http://lmgtfy.com/?q={{state.name}}" target="_blank">{{state.name}}</a></td>
             </tr>
         </table>
     </div>
@@ -47,7 +46,8 @@
 <!--        Loaded -->
         <script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>           <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>           
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 <!--        Files -->
         <script type="text/javascript" src="scripts/controllers.js"></script>
         <script type="text/javascript" src="scripts/app.js"></script>

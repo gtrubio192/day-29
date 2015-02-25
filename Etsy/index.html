@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-<!--    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="styles/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <style>
 
@@ -32,9 +32,17 @@
         <table id="posts" class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
             <tr class="reverse-tab">
                 <th>No. </th>
-                <th ng-click="reverseState()">Title</th>
-                <th ng-click="reverseState()">Number of Favorites</th>
-                <th>Quantity</th>
+                <th ng-click="reverseState(); up = titleArrow;">
+                    <i class="fa fa-chevron-up" ng-show="up"></i>
+                    <i class="fa fa-chevron-down" ng-show="!up"></i>
+                    Title
+                </th>
+                <th>Number of Favorites</th>
+                <th ng-click="reverseQuantity(); quantUp = quantArrow">
+                    <i class="fa fa-chevron-up" ng-show="quantUp"></i>
+                    <i class="fa fa-chevron-down" ng-show="!quantUp"></i>
+                    Quantity
+                </th>
                 <th>Listing Link</th>
             </tr>
             <tr ng-repeat="listing in listingsCopy track by $index"> 
@@ -43,7 +51,7 @@
                 <td>{{listing.num_favorers}}</td>
                 <td>{{listing.quantity}}</td>
                 <td>
-                    <a ng-href="{{listing.url}}">Check it out!</a>
+                    <a ng-href="{{listing.url}}" target="_blank">Check it out!</a>
                 </td>
             </tr>
         </table>
